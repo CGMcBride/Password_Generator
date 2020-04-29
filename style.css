@@ -1,0 +1,14 @@
+.content {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: lightblue;
+	padding: 20px;
+	width: 100%;
+}
+/* adding more width to the so you can see max characters */
+#display {
+	width: 100%;
+}
+#slider {
+	width: 100%;
+}
