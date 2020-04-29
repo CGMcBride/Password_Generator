@@ -5,6 +5,7 @@
 	padding: 20px;
 	width: 100%;
 }
+/* I want to strech the content div to be the size of the parent 8lg and 12sm */
 /* adding more width to the so you can see max characters */
 #display {
 	width: 100%;
