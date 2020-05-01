@@ -102,9 +102,7 @@ function generate() {
 
 	if (idNumericChars) {
 		allOptions = allOptions.concat(numericCharacters);
-	}
-
-	if (idLowerCase) {
+	} else if (idLowerCase) {
 		allOptions = allOptions.concat(lowerCase);
 	}
 
@@ -117,12 +115,20 @@ function generate() {
 		//we need a random function that picks one element from specialCharacters and appends it to password array
 	}
 	// creat for loop to choose password characters
-	for (var i = 0; i <= complexity; i++) {
-		password =
-			password +
-			values.charAt(Math.floor(Math.Random() * Math.floor(values.length - 1)));
+	console.log(allOptions);
+	for (var i = 0; i <= lengthPass; i++) {
+		var conner = getRand(allOptions);
+		password.push(conner);
 	}
+	var clipBoard = document.createElement("p");
 
+	// create an element for the variable,
+	clipBoard.innerText = password;
+	// assign a password to the value of the varible
+	var previousPasswords = document.getElementById("previous_passwords");
+	previousPasswords.append(clipBoard);
+	// render that Variable on the page
+	console.log(password);
 	// add password to textbox/display area
 	document.getElementById("display").value = password;
 }
