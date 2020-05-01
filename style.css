@@ -1,0 +1,15 @@
+.content {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: lightblue;
+	padding: 20px;
+	width: 100%;
+}
+/* I want to strech the content div to be the size of the parent 8lg and 12sm */
+/* adding more width to the so you can see max characters */
+#display {
+	width: 100%;
+}
+#slider {
+	width: 100%;
+}
