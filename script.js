@@ -29,6 +29,7 @@ function generate() {
 		"@",
 	];
 	var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
 	var lowerCase = [
 		"a",
 		"b",
@@ -89,7 +90,7 @@ function generate() {
 	var allOptions = [];
 	//possible password values
 
-	let password = [];
+	var password = [];
 
 	var idSpecialChars = confirm(
 		"Do you want special characters in your password?"
@@ -102,7 +103,9 @@ function generate() {
 
 	if (idNumericChars) {
 		allOptions = allOptions.concat(numericCharacters);
-	} else if (idLowerCase) {
+	}
+
+	if (idLowerCase) {
 		allOptions = allOptions.concat(lowerCase);
 	}
 
@@ -116,19 +119,38 @@ function generate() {
 	}
 	// creat for loop to choose password characters
 	console.log(allOptions);
+
 	for (var i = 0; i <= lengthPass; i++) {
 		var conner = getRand(allOptions);
 		password.push(conner);
 	}
+
+	password = password.join("");
+
 	var clipBoard = document.createElement("p");
 
 	// create an element for the variable,
 	clipBoard.innerText = password;
 	// assign a password to the value of the varible
 	var previousPasswords = document.getElementById("previous_passwords");
-	previousPasswords.append(clipBoard);
+	previousPasswords.prepend(clipBoard);
 	// render that Variable on the page
 	console.log(password);
 	// add password to textbox/display area
 	document.getElementById("display").value = password;
+}
+function copyClip() {
+	/* Get the text field */
+	let copyText = document.getElementById("display");
+
+	/* Select the text field */
+	copyText.focus();
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+	/* Copy the text inside the text field */
+	document.execCommand("copy");
+
+	/* Alert the copied text */
+	alert("Copied the text: " + copyText.value);
 }
